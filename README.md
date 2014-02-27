@@ -63,7 +63,7 @@ Java EE 6 Java Persistence API Developer Certified Expert Exam 1Z0-898 learning.
   - Describe the metamodel object approach to querying
   - Create Criteria API queries
 
-- **Using the Java Persistence API in a Container
+- **Using the Java Persistence API in a Container**
   - Use the Java Persistence API from a servlet
   - Use the Java Persistence API from a stateless session bean
 
