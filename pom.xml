@@ -10,6 +10,9 @@
     <name>1Z0-898 Exam Parent Helper Projects</name>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>jpa-entity</module>
+    </modules>
 
     <properties>
         <!-- Testing -->
@@ -31,9 +34,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <!-- tomEE -->
-        <tomee-maven-plugin.version>1.6.0</tomee-maven-plugin.version>
-        <tomee-maven-plugin.tomeeVersion>1.6.0</tomee-maven-plugin.tomeeVersion>
+        <!-- HSQLDB -->
+        <hsqldb.version>2.2.9</hsqldb.version>
     </properties>
 
     <dependencyManagement>
@@ -81,24 +83,21 @@
                 <artifactId>joda-time</artifactId>
                 <version>${joda-time.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>${hsqldb.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${javaee-api.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.openejb.maven</groupId>
-                    <artifactId>tomee-maven-plugin</artifactId>
-                    <version>${tomee-maven-plugin.version}</version>
-                    <configuration>
-                        <tomeeVersion>${tomee-maven-plugin.tomeeVersion}</tomeeVersion>
-                        <tomeeClassifier>plus</tomeeClassifier>
-                        <context>${project.artifactId}</context>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
 
 </project>
